@@ -90,3 +90,17 @@ h2 { color: #00f0ff; }
   .cards { display: flex; flex-wrap: wrap; gap: 16px; }
   .card { width: calc(50% - 8px); margin-bottom: 0; }
 }
+
+/* Картинка и кнопка-ссылка */
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0;
+  border: 1px solid #444444;
+}
+
+a.button {
+  display: inline-block;
+  text-decoration: none;
+}
