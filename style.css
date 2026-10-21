@@ -1,0 +1,92 @@
+/* Общие настройки */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background: #111111;
+  color: #eeeeee;
+}
+
+/* Шапка и меню */
+.header {
+  padding: 16px 20px;
+  background: #1c1c1c;
+  border-bottom: 2px solid #fcee0a;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #fcee0a;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.brand img { width: 40px; height: 40px; }
+
+.menu a {
+  margin-right: 16px;
+  color: #eeeeee;
+}
+
+.menu a.active { color: #fcee0a; }
+
+/* Содержимое */
+.main { max-width: 900px; margin: 0 auto; padding: 24px 20px; }
+
+h1 { color: #fcee0a; }
+h2 { color: #00f0ff; }
+
+/* Карточки */
+.card {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: #1c1c1c;
+  border: 1px solid #444444;
+}
+
+.card h3 { margin-top: 0; }
+.price { color: #fcee0a; font-weight: bold; }
+
+/* Кнопка и форма */
+.button {
+  padding: 8px 16px;
+  background: #fcee0a;
+  color: #111111;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form { max-width: 480px; }
+
+.form input, .form textarea {
+  display: block;
+  width: 100%;
+  margin: 4px 0 12px;
+  padding: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #1c1c1c;
+  color: #eeeeee;
+  border: 1px solid #444444;
+}
+
+/* Подвал */
+.footer {
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #999999;
+}
+
+/* Адаптив: карточки в 2 колонки на широком экране */
+@media (min-width: 768px) {
+  .cards { display: flex; flex-wrap: wrap; gap: 16px; }
+  .card { width: calc(50% - 8px); margin-bottom: 0; }
+}
