@@ -1,17 +1,40 @@
+/* ===== Цвета (тёмная тема по умолчанию) ===== */
+:root {
+  --bg: #111111;
+  --panel: #1c1c1c;
+  --text: #eeeeee;
+  --border: #444444;
+  --muted: #999999;
+  --yellow: #fcee0a;
+  --cyan: #00f0ff;
+  --button-text: #111111;
+}
+
+/* Светлая тема: включается классом light-theme на body */
+body.light-theme {
+  --bg: #f4f4f4;
+  --panel: #ffffff;
+  --text: #111111;
+  --border: #cccccc;
+  --muted: #666666;
+  --yellow: #8a7d00;
+  --cyan: #007a85;
+}
+
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.5;
-  background: #111111;
-  color: #eeeeee;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .header {
   padding: 16px 20px;
-  background: #1c1c1c;
-  border-bottom: 2px solid #fcee0a;
+  background: var(--panel);
+  border-bottom: 2px solid var(--yellow);
 }
 
 .brand {
@@ -19,7 +42,7 @@ body {
   align-items: center;
   gap: 10px;
   margin-bottom: 12px;
-  color: #fcee0a;
+  color: var(--yellow);
   font-size: 22px;
   font-weight: bold;
   text-decoration: none;
@@ -29,35 +52,40 @@ body {
 
 .menu a {
   margin-right: 16px;
-  color: #eeeeee;
+  color: var(--text);
 }
 
-.menu a.active { color: #fcee0a; }
+.menu a:hover { color: var(--cyan); }
+.menu a.active { color: var(--yellow); }
 
 .main { max-width: 900px; margin: 0 auto; padding: 24px 20px; }
 
-h1 { color: #fcee0a; }
-h2 { color: #00f0ff; }
+h1 { color: var(--yellow); }
+h2 { color: var(--cyan); }
 
-/* Карточки */
-.card {
+/* Карточки товаров */
+.item {
   margin-bottom: 16px;
   padding: 16px;
-  background: #1c1c1c;
-  border: 1px solid #444444;
+  background: var(--panel);
+  border: 1px solid var(--border);
 }
 
-.card h3 { margin-top: 0; }
-.price { color: #fcee0a; font-weight: bold; }
+.item h3 { margin-top: 0; }
+.price { color: var(--yellow); font-weight: bold; }
 
 .button {
   padding: 8px 16px;
   background: #fcee0a;
-  color: #111111;
+  color: var(--button-text);
   border: none;
   font-size: 16px;
   cursor: pointer;
 }
+
+.button:hover, a.button:hover { color: var(--button-text); background: #e0d300; }
+
+.theme-button { margin-left: 8px; padding: 4px 10px; font-size: 14px; }
 
 .form { max-width: 480px; }
 
@@ -68,21 +96,21 @@ h2 { color: #00f0ff; }
   padding: 8px;
   font-size: 16px;
   font-family: inherit;
-  background: #1c1c1c;
-  color: #eeeeee;
-  border: 1px solid #444444;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
 }
 
 .footer {
   padding: 16px;
   text-align: center;
   font-size: 14px;
-  color: #999999;
+  color: var(--muted);
 }
 
 @media (min-width: 768px) {
   .cards { display: flex; flex-wrap: wrap; gap: 16px; }
-  .card { width: calc(50% - 8px); margin-bottom: 0; }
+  .item { width: calc(50% - 8px); margin-bottom: 0; }
 }
 
 .photo {
@@ -90,10 +118,23 @@ h2 { color: #00f0ff; }
   width: 100%;
   height: auto;
   margin: 16px 0;
-  border: 1px solid #444444;
+  border: 1px solid var(--border);
 }
 
 a.button {
   display: inline-block;
   text-decoration: none;
 }
+
+/* Всплывающее окно Bootstrap в цветах сайта */
+.modal-content {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.modal-header, .modal-footer { border-color: var(--border); }
+
+/* Запасной вариант, если Bootstrap не загрузился */
+.d-none { display: none !important; }

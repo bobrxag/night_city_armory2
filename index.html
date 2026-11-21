@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>О проекте — NIGHT CITY ARMORY</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -16,12 +19,13 @@
       <a href="index.html" class="active">О проекте</a>
       <a href="shop.html">Магазин</a>
       <a href="contacts.html">Обратная связь</a>
+      <button id="theme" class="button theme-button" type="button">Светлая тема</button>
     </nav>
   </header>
 
   <main class="main">
     <h1>О проекте</h1>
-    <img class="photo" src="img/photo.jpg" alt="Ночной город будущего с неоновыми небоскрёбами">
+    <img class="photo" src="img/photo.jpg" alt="Оружейная мастерская: стены с креплениями для мечей и пистолетов, рабочий стол и неоновый свет">
     <p>NIGHT CITY ARMORY — вымышленный онлайн-магазин оружия в мире киберпанка.
       Здесь наёмники, корпораты и уличные бойцы находят снаряжение под любую работу.</p>
     <p>Это учебный сайт. Все товары, названия и цены придуманы, купить здесь ничего нельзя.</p>
@@ -32,6 +36,15 @@
       <li>Доставка в любой район города</li>
       <li>Гарантия на оружие с умным прицелом</li>
     </ul>
+
+    <p>
+      <button id="showMore" class="button" type="button">Подробнее</button>
+    </p>
+    <p id="moreText" class="d-none">
+      Каждый ствол в нашем каталоге проходит проверку на нижних уровнях города.
+      Мы работаем с наёмниками, корпоратами и уличными бойцами и подбираем оружие
+      под конкретную работу.
+    </p>
 
     <p><a class="button" href="shop.html">Перейти в магазин</a></p>
   </main>
